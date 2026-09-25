@@ -1,0 +1,42 @@
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+*.local
+
+# Firebase Admin SDK Service Account Keys & credentials
+*firebase-adminsdk*.json
+*serviceAccount*.json
+*.pem
+*.key
+*.p8
+*.p12
+
+# Firebase debug & emulator logs
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# Production builds
+dist/
+dist-ssr/
+build/
+
+# OS and Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
