@@ -3,7 +3,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase";
-import { Mail, Lock, Building2, MapPin, Clock, Eye, EyeOff, ArrowRight, AlertCircle } from "lucide-react";
+import { Mail, Lock, Building2, MapPin, Clock, Eye, EyeOff, ArrowRight, AlertCircle, ChefHat } from "lucide-react";
 
 const LoginSignup = () => {
   const { signup, login } = useAuth();
@@ -95,14 +95,20 @@ const LoginSignup = () => {
 
       <div className="w-full max-w-md relative">
         {/* Card */}
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden backdrop-blur-sm border border-gray-100">
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-10">
-            <h1 className="text-4xl font-bold text-white mb-2">
-              {isSignup ? "Get Started" : "Welcome Back"}
+          <div className="bg-gradient-to-r from-orange-600 via-amber-600 to-rose-600 px-8 py-10 text-white">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="w-9 h-9 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center">
+                <ChefHat className="w-5 h-5 text-white" />
+              </div>
+              <span className="font-extrabold text-lg tracking-tight">CampusEats</span>
+            </div>
+            <h1 className="text-3xl font-black mb-1">
+              {isSignup ? "Create Account" : "Welcome Back"}
             </h1>
-            <p className="text-blue-100 text-sm">
-              {isSignup ? "Create your account to manage cafeteria services" : "Sign in to your account"}
+            <p className="text-orange-100 text-xs">
+              {isSignup ? "Sign up to order meals or manage cafeteria menus" : "Sign in to access campus dining"}
             </p>
           </div>
 
@@ -248,27 +254,27 @@ const LoginSignup = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full mt-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold py-3 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition transform hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg"
+                className="w-full mt-8 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white font-extrabold py-3.5 rounded-2xl transition transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-lg shadow-orange-600/20 text-sm tracking-wide"
               >
                 {loading ? (
                   <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                 ) : (
                   <>
-                    {isSignup ? "Create Account" : "Sign In"}
-                    <ArrowRight className="w-5 h-5" />
+                    <span>{isSignup ? "Create Account" : "Sign In"}</span>
+                    <ArrowRight className="w-4 h-4" />
                   </>
                 )}
               </button>
             </form>
 
             {/* Toggle auth mode */}
-            <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-              <p className="text-gray-600 text-sm">
+            <div className="mt-8 pt-6 border-t border-gray-100 text-center">
+              <p className="text-gray-500 text-xs">
                 {isSignup ? "Already have an account?" : "Don't have an account?"}{" "}
                 <button
                   onClick={() => setIsSignup(!isSignup)}
                   disabled={loading}
-                  className="font-semibold text-blue-600 hover:text-blue-700 transition disabled:opacity-50"
+                  className="font-bold text-orange-600 hover:text-orange-700 transition disabled:opacity-50 ml-1"
                 >
                   {isSignup ? "Sign In" : "Sign Up"}
                 </button>
