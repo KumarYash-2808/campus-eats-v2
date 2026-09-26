@@ -1,5 +1,5 @@
-# 🍔 CampusEats (v2)
 🌐 [Live Deployment](https://frontend-one-ruby-178fpdikzo.vercel.app/)
+# 🍔 CampusEats (v2)
 **CampusEats** is a modern, full-stack food pre-ordering and cafeteria management platform tailored for university campuses. It streamlines campus dining by allowing students to browse cafeteria menus, check live stock, and order ahead to skip long lines, while providing cafeteria managers with a real-time order fulfillment dashboard.
 
 ### ✨ Key Features
